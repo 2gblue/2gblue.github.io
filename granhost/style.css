@@ -1,0 +1,469 @@
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+div,
+input,
+button {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0 0 0 0;
+  background-color: #a3c4bc;
+}
+
+#myHeader {
+  color: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: #413c58;
+  padding: 9px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+}
+
+#pageTitle {
+  margin-left: 15px;
+  float: left;
+  font-size: x-large;
+  font-style: bold;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#myFooter {
+  color: white;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #413c58;
+  padding: 10px 10px;
+  z-index: 999;
+  position: static;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outputTextField {
+  width: 200px;
+  padding: 10px;
+  transition: background-color 0.5s ease;
+}
+
+.outputTextField:hover {
+  background-color: #f2dda4;
+}
+
+.outputTextField:focus {
+  background-color: #f2dda4;
+}
+
+.custom-button {
+  background-color: #413c58;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+  font-size: 16px;
+  float: right;
+}
+
+.right_buttons {
+  background-color: #413c58;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: auto;
+}
+
+.custom-button:hover {
+  background-color: #567280;
+}
+
+.custom-button:focus {
+  outline: none;
+}
+
+.custom-button:active {
+  background-color: #1e3540;
+}
+
+/* Set parent container to 100% width */
+#pageBody {
+  width: 100%; /* Set parent container to 100% width */
+}
+/* Dropdown Button */
+#categoryField {
+  width: 95%; /* Set width to 90% of the parent container */
+  margin: 0 auto;
+  display: grid; /* Use CSS grid for 3x3 layout */
+  grid-template-columns: repeat(3, 1fr); /* Set 3 columns with equal width */
+  grid-gap: 20px; /* Add gap between buttons */
+  justify-items: center; /* Center buttons horizontally */
+  align-items: center; /* Center buttons vertically */
+  border: 3px #413c58 solid;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #bfd7b5;
+}
+
+.dropbtn {
+  background-color: gray;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width: 100%; /* Set buttons to 100% width to fill the grid cells */
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover,
+.dropbtn:focus {
+  filter: brightness(60%);
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  border: 1px #413c58 solid;
+  flex: 1;
+  width: 300px; /* Adjust the width as needed */
+  margin: 10px;
+  display: flex; /* Add display:flex to align dropdown content vertically */
+  justify-content: center; /* Add justify-content:center to align dropdown content horizontally */
+  align-items: center; /* Add align-items:center to vertically center the content */
+  position: relative; /* Add position:relative to enable absolute positioning of dropdown content */
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 100%; /* Add top:100% to position the content below the dropdown button */
+  left: 0; /* Add left:0 to align the content with the left edge of the dropdown button */
+  width: 100%; /* Add width:100% to make the content expand to the full width of the dropdown button */
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block;
+}
+
+/* Add clear:both to ensure proper alignment of floated elements */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#miscField {
+  width: 95%; /* Set width to 95% of the parent container */
+  margin: 0 auto;
+  display: flex; /* Use flexbox for horizontal alignment */
+  justify-content: center; /* Center buttons horizontally */
+  align-items: center; /* Center buttons vertically */
+  border: 3px #413c58 solid;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #bfd7b5;
+}
+
+.miscButton {
+  flex-grow: 1; /* Allow buttons to grow and share same width */
+  margin: 0 10px; /* Add margin between buttons */
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width: 100%; /* Set buttons to 100% width to fill the grid cells */
+  padding: 16px;
+  color: white;
+}
+
+.miscButton:nth-child(1) {
+  /* Create a linear gradient background */
+  background-image: linear-gradient(to bottom right, #d81313, #a23131);
+  /* Add any other styles you want to apply to the .miscButton:nth-child(1) element */
+}
+
+.miscButton:nth-child(2) {
+  /* Create a linear gradient background */
+  background-image: linear-gradient(to bottom right, #366ce8, #1f63c9);
+  /* Add any other styles you want to apply to the .miscButton:nth-child(2) element */
+}
+
+.miscButton:nth-child(3) {
+  /* Create a linear gradient background */
+  background-image: linear-gradient(to bottom right, #e18712, #ac6015);
+  /* Add any other styles you want to apply to the .miscButton:nth-child(3) element */
+}
+
+.miscButton:nth-child(4) {
+  /* Create a linear gradient background */
+  background-image: linear-gradient(to bottom right, #5ddf11, #72c81b);
+  /* Add any other styles you want to apply to the .miscButton:nth-child(4) element */
+}
+
+.miscButton:nth-child(5) {
+  /* Create a linear gradient background */
+  background-image: linear-gradient(to bottom right, #eeeb24, #a6a613);
+  /* Add any other styles you want to apply to the .miscButton:nth-child(5) element */
+}
+
+.miscButton:nth-child(6) {
+  /* Create a linear gradient background */
+  background-image: linear-gradient(to bottom right, #b929e5, #7612a1);
+  /* Add any other styles you want to apply to the .miscButton:nth-child(6) element */
+}
+
+#classField {
+  width: 95%; /* Set width to 95% of the parent container */
+  margin: 0 auto;
+  display: flex; /* Use flexbox for horizontal alignment */
+  justify-content: center; /* Center buttons horizontally */
+  align-items: center; /* Center buttons vertically */
+  border: 3px #413c58 solid;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #bfd7b5;
+}
+
+#outputDiv {
+  width: 95%; /* Set width to 95% of the parent container */
+  margin: 0 auto;
+  display: flex; /* Use flexbox for horizontal alignment */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  border: 3px #413c58 solid;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #e7efc5;
+}
+
+#outputFieldLeft {
+  width: 40%; /* Set width to 40% of the parent container */
+  margin-right: 20px; /* Add margin to the right for spacing */
+  display: inline-block; /* Use inline-block to align with float element */
+  border: 3px #413c58 solid;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #a3c4bc;
+}
+
+#outputFieldRight {
+  float: right; /* Float the div to the right */
+  width: 40%; /* Set width to 40% of the parent container */
+  border: 3px #413c58 solid;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #a3c4bc;
+}
+
+#outputTextField {
+  padding: 10px; /* Add padding to the text field */
+  font-size: 16px; /* Set font size */
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 5px; /* Add border radius */
+  outline: none; /* Remove default outline */
+  box-shadow: none; /* Remove default box shadow */
+  width: 200px; /* Set width */
+}
+
+#outputTextField:hover {
+  border-color: #666; /* Change border color on hover */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px; /* Added property for gap between columns */
+}
+
+.right_buttons {
+  width: 90%;
+  padding: 5px;
+  box-sizing: content-box;
+  margin-bottom: 10px;
+}
+
+.right_inputs {
+  width: 90%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+#outputTextField {
+  width: 95%;
+  box-sizing: content-box;
+}
+
+/* Add custom styles for custom-btn class */
+.custom-btn {
+  /* Add custom background image for each dropbtn button */
+  background-image: url(".jpg"); /* Add your desired image file path here */
+  /* Add additional custom styles here */
+}
+
+/* Define styles for different dropbtn buttons */
+#superUltimateRaids .custom-btn {
+  /* Add styles specific to superUltimateRaids dropbtn button if needed */
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 215, 0, 0.8),
+    rgba(255, 132, 0, 0.781),
+    rgba(255, 215, 0, 0.8)
+  );
+}
+
+#revansRaid .custom-btn {
+  /* Add styles specific to revansRaid dropbtn button if needed */
+  background-image: linear-gradient(
+    to right,
+    rgba(97, 33, 192, 0.8),
+    rgba(97, 33, 192, 0.4),
+    rgba(97, 33, 192, 0.8)
+  );
+}
+
+#astralRaids .custom-btn {
+  /* Add styles specific to astralRaids dropbtn button if needed */
+  background-image: linear-gradient(
+    to right,
+    rgba(97, 33, 192, 0.8),
+    rgba(97, 33, 192, 0.4),
+    rgba(97, 33, 192, 0.8)
+  );
+}
+
+#nightmareRaids .custom-btn {
+  background-image: linear-gradient(
+    to right,
+    rgba(97, 33, 192, 0.8),
+    rgba(97, 33, 192, 0.4),
+    rgba(97, 33, 192, 0.8)
+  );
+}
+
+#sixDragonRaids .custom-btn {
+  background-image: linear-gradient(
+    to right,
+    rgba(97, 33, 192, 0.8),
+    rgba(97, 33, 192, 0.4),
+    rgba(97, 33, 192, 0.8)
+  );
+}
+
+#maliceRaids .custom-btn {
+  background-image: linear-gradient(
+    to right,
+    rgba(97, 33, 192, 0.8),
+    rgba(97, 33, 192, 0.4),
+    rgba(97, 33, 192, 0.8)
+  );
+}
+
+#enneadRaids .custom-btn {
+  background-image: linear-gradient(
+    to right,
+    rgba(97, 33, 192, 0.8),
+    rgba(97, 33, 192, 0.4),
+    rgba(97, 33, 192, 0.8)
+  );
+}
+
+#fourStarRaids .custom-btn {
+  background-image: linear-gradient(
+    to right,
+    rgba(196, 25, 65, 0.8),
+    rgba(196, 25, 65, 0.4),
+    rgba(196, 25, 65, 0.8)
+  );
+}
+
+#stdNightmareRaids .custom-btn {
+  background-image: linear-gradient(
+    to right,
+    rgba(196, 25, 65, 0.8),
+    rgba(196, 25, 65, 0.4),
+    rgba(196, 25, 65, 0.8)
+  );
+}
+
+#row4class .dropbtn {
+  background-color: #413c58;
+}
+
+#row5class .dropbtn {
+  background-color: #413c58;
+}
+
+#ex2class .dropbtn {
+  background-color: #413c58;
+}
+
+#outputTitle {
+  color: #413c58;
+  font-size: 24px; /* Adjust the font size to your desired size */
+  font-weight: 750;
+  font-family: Arial, sans-serif; /* Specify the desired font family */
+  /* Add any other styles you want to apply to the outputTitle element */
+}
+
+/* Dropdown button on hover & focus */
+.headerdropbtn:hover,
+.headerdropbtn:focus {
+  filter: brightness(60%);
+}
+
+#maker a {
+  color: #f2dda4;
+  text-decoration: none;
+}
+
+#maker a {
+  color: #f2dda4;
+  text-decoration: none;
+}
+
+#footerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#footerText {
+  margin-top: 5px;
+  text-align: center;
+}
