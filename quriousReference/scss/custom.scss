@@ -1,0 +1,60 @@
+@import "../bootstrap/scss/bootstrap.scss";
+
+.scrollable-container {
+    height: 400px;
+    overflow-y: scroll;
+  }
+
+.body {
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+  }
+
+.navbar-brand {
+    padding: 10px;
+    width: 100%;
+    background-color: #212529;
+  }
+
+.col-md-4{
+    border: 1px solid black;
+    padding: 10px;
+    background-color: #EDDEA4;
+  }
+
+.themed-grid-col:hover{
+    filter: brightness(80%);
+  }
+
+.card {
+    border-radius: 0%;
+    width:100%;
+}
+
+.accordion-collapse {
+    background-color: #ffefd8; /* Replace with your desired background color */
+}
+
+.list-group-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.list-group-item {
+    width: 100%;
+} 
+
+#header1 {
+  float:left; 
+  font-size: larger; 
+  color: white;
+}
+
+.h4 {
+  color:gold;
+  text-decoration: none;
+}
+
+a.h4:hover {
+  color:goldenrod;
+  filter: brightness(80%);
+}
