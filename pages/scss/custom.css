@@ -11267,3 +11267,50 @@ a.h4:hover {
 .custom-container-fluid .btn {
   margin-top: 20px;
 } /*# sourceMappingURL=custom.css.map */
+/*here*/
+@keyframes fadeAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.custom-container-3 {
+  background-color: #212529;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+#animatedText {
+  display: inline-block;
+  animation: fadeAnimation 3s infinite;
+}
+
+.jumbotron {
+  background: linear-gradient(45deg, #212529, #aabed3);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
+  color: white;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
