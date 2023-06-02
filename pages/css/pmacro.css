@@ -1,0 +1,82 @@
+.output-container {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100vh;
+  padding: 20px;
+}
+
+.sidebar .list-group-item {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  padding: 8px 0;
+}
+
+.sidebar .list-group-item:hover,
+.sidebar .list-group-item:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .list-group-item a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.main-content {
+  margin-left: 200px;
+  padding: 20px;
+  height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  flex-basis: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid white;
+}
+
+.scrollable-textarea {
+  overflow: auto;
+  resize: none;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Hide the scrollbar in Webkit browsers */
+.scrollable-textarea::-webkit-scrollbar {
+  display: none;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.flex-item {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.output-container {
+  max-height: 300vh;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+
