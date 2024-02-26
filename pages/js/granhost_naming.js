@@ -173,40 +173,49 @@ trainsInput.addEventListener("input", function () {
   previousTrains = trains;
 });
 
-// Function to update outputTextField with "SBAJA"
-function addTextToOutputField() {
+function updateOutputTextFieldWithLuciZ() {
+  var outputTextField = document.getElementById("outputTextField");
+  outputTextField.value += "スパルシ";
+}
+
+function updateOutputTextFieldWithHexa() {
+  var outputTextField = document.getElementById("outputTextField");
+  outputTextField.value += "天元";
+}
+
+function updateOutputTextFieldWithSBHL() {
   var outputTextField = document.getElementById("outputTextField");
   outputTextField.value += "スパバハ";
 }
 
-// Function to update outputTextField with "MUGEN"
 function updateOutputTextFieldWithMugen() {
   var outputTextField = document.getElementById("outputTextField");
   outputTextField.value += "ムゲン";
 }
 
-// Function to update outputTextField with "DIASPORA"
 function updateOutputTextFieldWithDiaspora() {
   var outputTextField = document.getElementById("outputTextField");
   outputTextField.value += "ディアスポラ";
 }
 
-// Function to update outputTextField with "SIEGFRIED"
 function updateOutputTextFieldWithSiegfried() {
   var outputTextField = document.getElementById("outputTextField");
   outputTextField.value += "ジーク";
 }
 
-// Function to update outputTextField with "AGASTIA"
 function updateOutputTextFieldWithAgastia() {
   var outputTextField = document.getElementById("outputTextField");
   outputTextField.value += "アガスティア";
 }
 
-// Function to update outputTextField with "SEOFON"
 function updateOutputTextFieldWithSeofon() {
   var outputTextField = document.getElementById("outputTextField");
   outputTextField.value += "シエテ";
+}
+
+function updateOutputTextFieldWithCosmos() {
+  var outputTextField = document.getElementById("outputTextField");
+  outputTextField.value += "コスモス";
 }
 
 function updateOutputTextFieldWithFaaHL() {
@@ -297,6 +306,11 @@ function updateOutputTextFieldWithLumimal() {
 function updateOutputTextFieldWithAnima() {
   var outputTextField = document.getElementById("outputTextField");
   outputTextField.value += "アニマ";
+}
+
+function updateOutputTextFieldWithLVoid() {
+  var outputTextField = document.getElementById("outputTextField");
+  outputTextField.value += "レギオン･ヴォイド";
 }
 
 function updateOutputTextFieldWithAtum() {
@@ -421,12 +435,15 @@ function updateOutputTextFieldWithRisingForce() {
 
 // Define an array of element IDs and corresponding event handler functions
 var elementIds = [
-  { id: "superUltimateBahamut", handler: addTextToOutputField },
+  { id: "lucizero", handler: updateOutputTextFieldWithLuciZ },
+  { id: "hexa", handler: updateOutputTextFieldWithHexa },
+  { id: "superUltimateBahamut", handler: updateOutputTextFieldWithSBHL },
   { id: "mugen", handler: updateOutputTextFieldWithMugen },
   { id: "diaspora", handler: updateOutputTextFieldWithDiaspora },
   { id: "siegfried", handler: updateOutputTextFieldWithSiegfried },
   { id: "agastia", handler: updateOutputTextFieldWithAgastia },
   { id: "seofon", handler: updateOutputTextFieldWithSeofon },
+  { id: "cosmos", handler: updateOutputTextFieldWithCosmos },
   { id: "faasanHL", handler: updateOutputTextFieldWithFaaHL },
   { id: "bubz", handler: updateOutputTextFieldWithBubz },
   { id: "belial", handler: updateOutputTextFieldWithBelial },
@@ -445,6 +462,7 @@ var elementIds = [
   { id: "phronesis", handler: updateOutputTextFieldWithPhronesis },
   { id: "lumimal", handler: updateOutputTextFieldWithLumimal },
   { id: "anima", handler: updateOutputTextFieldWithAnima },
+  { id: "lvoid", handler: updateOutputTextFieldWithLVoid },
   { id: "atum", handler: updateOutputTextFieldWithAtum },
   { id: "tefnut", handler: updateOutputTextFieldWithTefnut },
   { id: "bennu", handler: updateOutputTextFieldWithBennu },
