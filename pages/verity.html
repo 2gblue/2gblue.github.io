@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verity Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/verity.css">
+</head>
+
+<body style="background-image: url('assets/skydom.jpg');">
+
+    <div class="container mt-4">
+        <table class="table table-bordered border-secondary">
+            <thead class="table-secondary">
+                <tr style="text-align:center;">
+                    <th scope="col">Main Summon</th>
+                    <th scope="col">Friend Summon</th>
+                    <th scope="col">Dragon</th>
+                    <th scope="col">Primarch</th>
+                    <th scope="col">Exalto</th>
+                    <th scope="col">Crit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="text-align:center;">
+                    <td id="mainSum">0</td>
+                    <td id="friendSum">0</td>
+                    <td id="sixDragon">0</td>
+                    <td id="primarch">0</td>
+                    <td id="exalto">0</td>
+                    <td id="totalCrit">0</td>
+                </tr>
+                <tr>
+                <tr>
+                    <td>Total Crit</td>
+                    <td id="gridCrit" colspan="4" style="text-align: center;">0</td>
+                    <td style="text-align:center;" class="borderless">
+                        <button type="button" class="btn btn-outline-danger"
+                            onclick="calculateGridCrit()">Calculate</button>
+                    </td>
+                </tr>
+                </tr>
+
+
+
+                <tr class="table-secondary">
+                    <th colspan="6" style="text-align: center;">Summons</th>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>Summons</b></td>
+                    <td colspan="2"><b>Uncap</b></td>
+                    <td><b>Main Summon</b></td>
+                    <td><b>Friend Summon</b></td>
+                </tr>
+                <tr>
+                <tr>
+                    <td colspan="2">Aura Summons</td>
+                    <td colspan="2">
+                        <div class="dropdown">
+                            <button id="dropdownMenuButton1" class="btn btn-secondary dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Tier
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" onclick="selectTier('0', 'main2')">0%</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectTier('120', 'main1')">120%</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectTier('140', 'main1')">140%</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectTier('150', 'main1')">150%</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectTier('160', 'main1')">160%</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectTier('170', 'main1')">170%</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td style="text-align: center;">
+                        <input type="radio" id="main1" name="main" value="0" onclick="updateSum('mainSum', this.value)">
+                    </td>
+                    <td style="text-align: center;">
+                        <input type="radio" id="friend1" name="friend" value="0"
+                            onclick="updateSum('friendSum', this.value)">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Aura Summons</td>
+                    <td colspan="2">
+                        <div class="dropdown">
+                            <button id="dropdownMenuButton2" class="btn btn-secondary dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Tier
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" onclick="selectTier('0', 'main2')">0%</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectTier('120', 'main2')">120%</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectTier('140', 'main2')">140%</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectTier('150', 'main2')">150%</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectTier('160', 'main2')">160%</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectTier('170', 'main2')">170%</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td style="text-align: center;">
+                        <input type="radio" id="main2" name="main" value="0" onclick="updateSum('mainSum', this.value)">
+                    </td>
+                    <td style="text-align: center;">
+                        <input type="radio" id="friend2" name="friend" value="0"
+                            onclick="updateSum('friendSum', this.value)">
+                    </td>
+                </tr>
+
+
+                <tr class="table-secondary">
+                    <th colspan="6" style="text-align: center;">Weapons</th>
+                </tr>
+                <td colspan="2">Small</td>
+                <td colspan="2">
+                    <div class="dropdown">
+                        <button id="dropdownMenuButtonSmall" class="btn btn-secondary dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Skill Level
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="selectSkillLevel('2', 'small')">SL10 - 2%</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectSkillLevel('3', 'small')">SL15 - 3%</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectSkillLevel('4', 'small')">SL20 - 4%</a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+                <td colspan="3">
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control" id="smallQuantity" value="0"
+                            placeholder="Weapon Quantity" oninput="updateTotalCrit('small')">
+                    </div>
+                </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Medium</td>
+                    <td colspan="2">
+                        <div class="dropdown">
+                            <button id="dropdownMenuButtonMedium" class="btn btn-secondary dropdown-toggle"
+                                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Skill Level
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" onclick="selectSkillLevel('5', 'medium')">SL10 -
+                                        5%</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectSkillLevel('6.5', 'medium')">SL15 -
+                                        6.5%</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectSkillLevel('7.5', 'medium')">SL20 -
+                                        7.5%</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectSkillLevel('8.5', 'medium')">SL25 -
+                                        8.5%</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td colspan="3">
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" id="mediumQuantity" value="0"
+                                placeholder="Weapon Quantity" oninput="updateTotalCrit('medium')">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Big</td>
+                    <td colspan="2">
+                        <div class="dropdown">
+                            <button id="dropdownMenuButtonBig" class="btn btn-secondary dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Skill Level
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" onclick="selectSkillLevel('8', 'big')">SL10 -
+                                        8%</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectSkillLevel('10', 'big')">SL15 -
+                                        10%</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectSkillLevel('11', 'big')">SL20 -
+                                        11%</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td colspan="3">
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" id="bigQuantity" value="0"
+                                placeholder="Weapon Quantity" oninput="updateTotalCrit('big')">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Big II</td>
+                    <td colspan="2">
+                        <div class="dropdown">
+                            <button id="dropdownMenuButtonBigII" class="btn btn-secondary dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Skill Level
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" onclick="selectSkillLevel('10', 'bigII')">SL10 -
+                                        10%</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectSkillLevel('12', 'bigII')">SL15 -
+                                        12%</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td colspan="3">
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" id="bigIIQuantity" value="0"
+                                placeholder="Weapon Quantity" oninput="updateTotalCrit('bigII')">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Exalto</td>
+                    <td colspan="2">
+                        <div class="dropdown">
+                            <button id="exaltoDropdown" class="btn btn-secondary dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Percentage
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" onclick="selectExaltoTier('20')">20%</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectExaltoTier('30')">30%</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td colspan="3">
+                        <div class="input-group mb-3">
+                            <input type="number" id="exaltoQuantity" class="form-control" placeholder="Weapon Quantity"
+                                oninput="updateExalto()">
+                        </div>
+                    </td>
+                </tr>
+
+
+
+
+                <tr class="table-secondary">
+                    <th colspan="6" style="text-align: center;">Primarchs & Dragons</th>
+                </tr>
+                <tr>
+                    <td colspan="2">Dragon Summon</td>
+                    <td colspan="2">
+                        <div class="dropdown">
+                            <button id="dropdownMenuButtonDragon" class="btn btn-secondary dropdown-toggle"
+                                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Tier
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" onclick="selectDragonTier('10')">10%</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectDragonTier('20')">20%</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectDragonTier('40')">40%</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td style="text-align: center;" colspan="2">
+                        <input type="checkbox" id="dragonCheckbox" name="dragonCheckbox" value="0"
+                            onclick="updateDragon(this.checked)">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">Backline Buff</td>
+                    <td style="text-align: center;" colspan="2">
+                        <input type="checkbox" id="primarchCheckbox" name="primarchCheckbox" value="1"
+                            onclick="updatePrimarch(this.checked)">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/verity.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <footer class="navbar navbar-dark bg-dark">
+        <div class="container d-flex justify-content-center">
+            <span class="navbar-text text-center">
+                Source @ <a href="https://gbf.wiki/Weapon_Skills#Verity"
+                    style="text-decoration:none; color: turquoise;">
+                    Verity</a> &
+                <a href="https://gbf.wiki/Weapon_Skills#Celere"
+                    style="text-decoration:none; color: turquoise;">Celere</a>
+                <br>
+                <span>Made by : <i class="fa fa-github" style="font-size:20px"></i> <a href="https://github.com/2gblue/"
+                        target="_blank" style="text-decoration: none; color: gold;">2gblue</a></span>
+            </span>
+        </div>
+    </footer>
+</body>
+
+</html>

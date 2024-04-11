@@ -1,0 +1,23 @@
+.borderless-row td {
+  border: none;
+}
+
+/* Light blue */
+.gridCrit-blue {
+  color: #007bff; /* Light blue color */
+}
+
+/* Light green */
+.gridCrit-green {
+  color: #28a745; /* Light green color */
+}
+
+/* Orange */
+.gridCrit-orange {
+  color: #ff8c00; /* Orange color */
+}
+
+/* Purple */
+.gridCrit-purple {
+  color: #800080; /* Purple color */
+}

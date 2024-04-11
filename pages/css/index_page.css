@@ -11317,6 +11317,41 @@ a.h4:hover {
 .custom-container-3 h2,
 .custom-container-3 .h2,
 .custom-container-3 p {
+  margin-bottom: 0px;
+  position: relative;
+  z-index: 1;
+}
+
+.custom-container-4 {
+  position: relative;
+  color: white;
+}
+
+.custom-container-4::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/verBG.png");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(25%);
+  pointer-events: none;
+  z-index: -1;
+  transition: transform 0.3s ease, filter 0.3s ease; /* Added filter transition */
+  transform: scale(1);
+}
+
+.custom-container-4:hover::before {
+  filter: brightness(25%); /* Retain the brightness on hover */
+  transform: scale(1.1);
+}
+
+.custom-container-4 h2,
+.custom-container-4 .h2,
+.custom-container-4 p {
   margin-bottom: 20px;
   position: relative;
   z-index: 1;
