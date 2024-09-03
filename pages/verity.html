@@ -13,7 +13,6 @@
 </head>
 
 <body style="background-image: url('assets/skydom.jpg');">
-
     <div class="container mt-4">
         <table class="table table-bordered border-secondary">
             <thead class="table-secondary">
@@ -21,7 +20,7 @@
                     <th scope="col">Main Summon</th>
                     <th scope="col">Friend Summon</th>
                     <th scope="col">Dragon</th>
-                    <th scope="col">Primarch</th>
+                    <th scope="col">Backline</th>
                     <th scope="col">Exalto</th>
                     <th scope="col">Crit</th>
                 </tr>
@@ -31,7 +30,7 @@
                     <td id="mainSum">0</td>
                     <td id="friendSum">0</td>
                     <td id="sixDragon">0</td>
-                    <td id="primarch">0</td>
+                    <td id="backline">0</td>
                     <td id="exalto">0</td>
                     <td id="totalCrit">0</td>
                 </tr>
@@ -45,9 +44,6 @@
                     </td>
                 </tr>
                 </tr>
-
-
-
                 <tr class="table-secondary">
                     <th colspan="6" style="text-align: center;">Summons</th>
                 </tr>
@@ -110,8 +106,6 @@
                             onclick="updateSum('friendSum', this.value)">
                     </td>
                 </tr>
-
-
                 <tr class="table-secondary">
                     <th colspan="6" style="text-align: center;">Weapons</th>
                 </tr>
@@ -235,15 +229,11 @@
                         </div>
                     </td>
                 </tr>
-
-
-
-
                 <tr class="table-secondary">
-                    <th colspan="6" style="text-align: center;">Primarchs & Dragons</th>
+                    <th colspan="6" style="text-align: center;">Backline & Dragons</th>
                 </tr>
                 <tr>
-                    <td colspan="2">Dragon Summon</td>
+                    <td colspan="2">Dragon Summon (Six Dragons/Wedges of the Sky)</td>
                     <td colspan="2">
                         <div class="dropdown">
                             <button id="dropdownMenuButtonDragon" class="btn btn-secondary dropdown-toggle"
@@ -263,10 +253,23 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="4">Backline Buff</td>
+                    <td colspan="2">Backline Buff (Primarch/Four Saints)</td>
+                    <td colspan="2">
+                        <div class="dropdown">
+                            <button id="dropdownMenuButtonBackline" class="btn btn-secondary dropdown-toggle"
+                                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Tier
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" onclick="selectBacklineTier('10')">10%</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectBacklineTier('20')">20%</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectBacklineTier('30')">30%</a></li>
+                            </ul>
+                        </div>
+                    </td>
                     <td style="text-align: center;" colspan="2">
-                        <input type="checkbox" id="primarchCheckbox" name="primarchCheckbox" value="1"
-                            onclick="updatePrimarch(this.checked)">
+                        <input type="checkbox" id="backlineCheckbox" name="backlineCheckbox" value="0"
+                            onclick="updateBackline(this.checked)">
                     </td>
                 </tr>
             </tbody>
@@ -277,7 +280,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-
     <footer class="navbar navbar-dark bg-dark">
         <div class="container d-flex justify-content-center">
             <span class="navbar-text text-center">

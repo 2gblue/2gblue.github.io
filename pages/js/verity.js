@@ -53,9 +53,23 @@ function updateDragon(isChecked) {
   document.getElementById("sixDragon").innerText = selectedTier;
 }
 
-function updatePrimarch(isChecked) {
-  var selectedValue = isChecked ? "20" : "0";
-  document.getElementById("primarch").innerText = selectedValue;
+function selectBacklineTier(tier) {
+  var selectedTier = tier;
+  document.getElementById("dropdownMenuButtonBackline").innerText =
+    selectedTier;
+
+  // Set the value of the checkbox to the selected tier
+  document.getElementById("backlineCheckbox").value = selectedTier;
+
+  // Update the corresponding <td> element
+  updateBackline(document.getElementById("backlineCheckbox").checked);
+}
+
+function updateBackline(isChecked) {
+  var selectedTier = isChecked
+    ? document.getElementById("backlineCheckbox").value
+    : "0";
+  document.getElementById("backline").innerText = selectedTier;
 }
 
 function selectExaltoTier(tier) {
@@ -145,13 +159,13 @@ function calculateGridCrit() {
     parseFloat(document.getElementById("friendSum").innerText) || 0;
   var sixDragon =
     parseFloat(document.getElementById("sixDragon").innerText) || 0;
-  var primarch = parseFloat(document.getElementById("primarch").innerText) || 0;
+  var backline = parseFloat(document.getElementById("backline").innerText) || 0;
   var exalto = parseFloat(document.getElementById("exalto").innerText) || 0;
   var totalCrit =
     parseFloat(document.getElementById("totalCrit").innerText) || 0;
 
   var gridCrit =
-    ((100 + mainSum + friendSum + sixDragon + primarch + exalto) / 100) *
+    ((100 + mainSum + friendSum + sixDragon + backline + exalto) / 100) *
     totalCrit;
 
   // Update the gridCrit value in the corresponding table cell
