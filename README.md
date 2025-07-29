@@ -1,3 +1,3 @@
-# 2gblue.github.io
+# 2gblue-depot.old
 
-Personal page
+Old page used to host static pages with built-in js functions through GitHub pages for personal uses
